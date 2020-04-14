@@ -1,11 +1,11 @@
 <?php 
-
+require_once './config/db.php';
 class Image {
-    private $id;
-    private $id_project;
-    private $image_path;
+    public $id;
+    public $id_project;
+    public $image_path;
 
-    private $db;
+    public $db;
 
     public function __construct(){
         $this->db = Database::connect();
@@ -24,15 +24,16 @@ class Image {
         $sql = "INSERT INTO images VALUES (null, :id_project, :image_path)";
         $stmt = $this->db->prepare($sql);
         $stmt->execute(array(
-            ':id_project' => $this->getId_project,
-            ':image_path' => $this->image_path
+            ':id_project' => $this->getId_project(),
+            ':image_path' => $this->getImage_path(),
         ));
         $result = false;
-        if($result){
+        if($stmt){
             $result = true;
         }
         return $result;
     }
+    
 
     /**
      * Get the value of id_project
@@ -50,6 +51,26 @@ class Image {
     public function setId_project($id_project)
     {
         $this->id_project = $id_project;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of image_path
+     */ 
+    public function getImage_path()
+    {
+        return $this->image_path;
+    }
+
+    /**
+     * Set the value of image_path
+     *
+     * @return  self
+     */ 
+    public function setImage_path($image_path)
+    {
+        $this->image_path = $image_path;
 
         return $this;
     }

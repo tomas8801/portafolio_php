@@ -31,14 +31,21 @@
 
 
         <div class="form-group">
-            Image <input type="file" class="form-control-file" name="image">
+            Main Image <input type="file" class="form-control-file" name="image">
+        </div>
+
+        <div class="form-group">
+            Others Images <input type="file" multiple="true" class="form-control-file" name="images[]">
         </div>
 
 
         <div class="form-group">
             Github <input type="text" name="github" class="form-control">
         </div>
+
+
         
         <input type="submit" value="Upload" name="submit">
     </form>
+
 </div>

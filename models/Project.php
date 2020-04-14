@@ -52,6 +52,30 @@ class Project {
         return $result;
     }
 
+    public function lastIdInsert(){
+        $sql = "SELECT LAST_INSERT_ID()  as 'project'";
+        $stmt= $this->db->prepare($sql);
+        $stmt->execute();
+        $id_project = $stmt->fetch(PDO::FETCH_OBJ)->project;
+
+        return $id_project;
+        
+    }
+
+    public function delete(){
+        $sql = "DELETE FROM projects WHERE id = :id ";
+        $stmt = $this->db->prepare($sql);
+        $id = $this->getId();
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $result = false;
+        if ($stmt) {
+            $result = true;
+        }
+        return $result;
+    }
+
 
 
 
