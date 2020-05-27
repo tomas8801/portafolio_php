@@ -1,6 +1,6 @@
-<div class="col-lg-12 item contacto d-none">
 
-    <div class="card">
+<div class="col-md-12">
+    <div class="card ">
 
         <div class="card-head " id="card-form">
             <p class="text-center mt-3">PHP Full Stack Developer student at Educacion IT, Buenos Aires.</p>
@@ -33,4 +33,4 @@
 
     </div>
 
-</div>
+    </div>

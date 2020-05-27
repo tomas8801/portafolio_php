@@ -14,20 +14,20 @@
 
     <div class="container">
 
-    <div class="row">
+        <div class="row">
 
-        <div class="col-lg-12">
+    
+            <div class="col-md-12">
+                    <ul class="filters" >
+                        <li><a href="<?=url_base?>page/index">Projects</a></li>
+                        <li><a href="<?=url_base?>page/contact">Contact</a></li>
+                        <?php if(isset($_SESSION['admin'])) : ?>
+                            <li><a href="<?=url_base?>project/upload" >Upload</a></li>
+                            <li><a href="<?=url_base?>project/management" >Management</a></li>
+                            <li><a href="<?=url_base?>admin/logout">Logout</a></li>
+                        <?php else :?>
+                            <a href="<?=url_base?>page/admin" class="float-right">Login</a></li>                         
+                        <?php endif; ?>
+                    </ul>
 
-            <ul class="filters text-center">
-                <li class="active" data-filter="*"><a href="#">All</a></li>
-                <li data-filter=".html"><a href="#!">HTML</a></li>
-                <li data-filter=".css"><a href="#!">CSS</a></li>
-                <li data-filter=".javascript"><a href="#!">Javascript</a></li>
-                <li data-filter=".php"><a href="#!">PHP</a></li>
-                <li data-filter=".contacto" id="contacto"><a href="#!">Contact</a></li>
-            </ul>
-
-            <div class="projects">
-
-                <div class="row">
-                
+            </div>

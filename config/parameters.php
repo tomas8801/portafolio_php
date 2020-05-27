@@ -1,5 +1,5 @@
 <?php 
 
-define('url_base', 'http://localhost/proyectos/portafolio-php/');
-define('default_controller', 'projectController');
+define('url_base', 'http://localhost/portafolio_php/');
+define('default_controller', 'pageController');
 define('default_action', 'index');

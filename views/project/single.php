@@ -1,8 +1,8 @@
 
 
-<div class="col-lg-12">
-<h1 class="text-center"><?= $project->name?></h1>
-<div id="carousel" class="carousel slide" data-ride="carousel">
+<div class="col-lg-12 text-center">
+<h4 class=" text-muted"><?= $project->name?></h4>
+<div id="carousel" class="carousel slide" data-ride="carousel"> 
   <div class="carousel-inner">
 
     <div class="carousel-item active">
@@ -25,7 +25,7 @@
   </a>
 </div>
 
-<h5><?=$project->description?></h5>
+<h5 class="text-muted"><?=$project->description?></h5>
 <h6><?=$project->languages?></h6>
 
 </div>

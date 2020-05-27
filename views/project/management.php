@@ -1,7 +1,9 @@
 <div class="col-md-12">
     <?php if(isset($_SESSION['delete'])):?>
         <div class="alert"><?= $_SESSION['delete']?></div>
-    <?php endif; ?>
+    <?php endif;
+        Utils::sessionDelete('delete');
+    ?>
 
     <table class="table">
     <thead>

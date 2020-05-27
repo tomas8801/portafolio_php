@@ -4,12 +4,7 @@ require_once 'models/Image.php';
 
 class projectController{
 
-    public function index(){
-        $project = new Project();
-        $projects = $project->getAll();
-
-        require_once 'views/index.php';
-    }
+    
 
     public function upload(){
         require_once 'views/project/upload.php';
@@ -20,11 +15,11 @@ class projectController{
             $name = isset($_POST['name']) ? $_POST['name'] : false;
             $languages = isset($_POST['languages']) ? $_POST['languages'] : false;
             $description = isset($_POST['description']) ? $_POST['description'] : false;
-            $github = isset($_POST['github']) ? $_POST['github'] : false;
+            $github = isset($_POST['github']) ? $_POST['github'] : '';
 
 
             
-            if($name && $languages && $description && $github){
+            if($name && $languages && $description){
                 $pro = new Project();
                 $pro->setName($name);                
                 $pro->setDescription($description);
@@ -69,9 +64,9 @@ class projectController{
                         }
 
                         if($saveImages){
-                            echo 'Se guardo';
+                            header('Location: '.url_base);
                         }else {
-                            echo 'No se guardo';
+                            echo 'Hubo un error al guardar el proyecto';
                         }
                     }
 

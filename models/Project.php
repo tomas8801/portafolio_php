@@ -42,7 +42,7 @@ class Project {
             ':languages' => $this->getLanguages(),
             ':description' => $this->getDescription(),
             ':image' => $this->getImage(),
-            ':github' => $this->getGithub(),
+            ':github' => $this->getGithub()
         ));
         
         $result = false;

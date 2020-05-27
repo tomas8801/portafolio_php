@@ -3,10 +3,13 @@ session_start();
 require_once 'autoload.php';
 require_once 'config/parameters.php';
 require_once 'config/db.php';
+require_once 'assets/helpers/utils.php';
 
 
 
 require_once 'views/includes/header.php';
+
+
 
 if(isset($_GET['controller'])){
 
@@ -49,7 +52,8 @@ if(class_exists($nombreControlador)){
 }
 
 
-
+    
+    //include_once 'views/project/upload.php';
 
 
 require_once 'views/includes/footer.php';
