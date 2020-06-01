@@ -25,7 +25,7 @@
   </a>
 </div>
 
-<h5 class="text-muted"><?=$project->description?></h5>
+<h5 class="text-muted my-4"><?=$project->description?></h5>
 <h6><?=$project->languages?></h6>
 
 </div>
