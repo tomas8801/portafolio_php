@@ -1,4 +1,11 @@
 <div class="col-md-12 " >
+
+    <?php if(isset($_SESSION['error-login'])) {
+        echo $_SESSION['error-login'];
+    }
+    Utils::sessionDelete('error-login');
+    ?>
+
     <div class="card" style="height: 600px; display: flex; justify-content: center;">
 
     <p class="text-center text-muted">* Only for admin</p>

@@ -21,13 +21,19 @@
                     <ul class="filters" >
                         <li><a href="<?=url_base?>page/index">Projects</a></li>
                         <li><a href="<?=url_base?>page/contact">Contact</a></li>
-                        <?php if(isset($_SESSION['admin'])) : ?>
+
+                        <?php if(Utils::isAdmin()) : ?>
                             <li><a href="<?=url_base?>project/upload" >Upload</a></li>
                             <li><a href="<?=url_base?>project/management" >Management</a></li>
                             <li><a href="<?=url_base?>admin/logout">Logout</a></li>
                         <?php else :?>
                             <a href="<?=url_base?>page/admin" class="float-right">Login</a></li>                         
                         <?php endif; ?>
+                        
+                        <?php if(Utils::isAdmin()) :  ?>
+                            <li>Bienvenido, administrador.</li>
+                        <?php endif;?>
+
                     </ul>
 
             </div>

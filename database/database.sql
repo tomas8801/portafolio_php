@@ -17,3 +17,10 @@ image_path VARCHAR(50) not null,
 CONSTRAINT pk_images PRIMARY KEY (id),
 CONSTRAINT fk_image_project FOREIGN KEY (id_project) REFERENCES projects(id)
 )ENGINE=InnoDb;
+
+CREATE TABLE users (
+id int(255) auto_increment not null,
+name varchar(50) not null,
+password varchar(50) not null,
+CONSTRAINT pk_users PRIMARY KEY (id)
+)ENGINE=InnoDb;
