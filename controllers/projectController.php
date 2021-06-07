@@ -16,6 +16,7 @@ class projectController{
             $languages = isset($_POST['languages']) ? $_POST['languages'] : false;
             $description = isset($_POST['description']) ? $_POST['description'] : false;
             $github = isset($_POST['github']) ? $_POST['github'] : '';
+            $web = isset($_POST['web']) ? $_POST['web'] : '';
 
 
             
@@ -24,6 +25,7 @@ class projectController{
                 $pro->setName($name);                
                 $pro->setDescription($description);
                 $pro->setGithub($github);
+                $pro->setWeb($web);
 
                 #GUARDAMOS LENGUAJES
                 $languages = implode('-', $languages);
@@ -70,6 +72,8 @@ class projectController{
                         }
                     }
 
+                } else {
+                    echo 'sorete';
                 }
             }
         }

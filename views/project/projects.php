@@ -15,7 +15,7 @@
     <?php foreach($projects as $project):?>
         <?php 
             $languajes = $project->languages;
-            $languajes = explode('-', $languajes);
+            $languajes = explode(' - ', $languajes);
             $langs = implode(' ', $languajes);
             $langs = strtolower($langs);
         ?>
@@ -28,14 +28,19 @@
 
 
                     <div class="card-hover">
-                        <?=$project->languages?>
-                        <a href="<?=$project->github?>" target="_blank">Github</a>
+                        <small><?=$project->languages?></small>
+                        <div class="links">
+                            <?php if($project->web):?>
+                            <a href="<?=$project->web?>" target="_blank"><img class="svg-logo" src="<?=url_base?>assets/img/red-mundial.svg" alt="web-icon"></a>        
+                            <?php endif; ?>
+                            <a href="<?=$project->github?>" target="_blank"><img class="svg-logo" src="<?=url_base?>assets/img/logo-github.svg" alt="github-icon"></a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="card-body text-center">
                     <h4 class="title"><?= $project->name?></h4>
-                    <a href="<?=url_base?>project/single&id=<?=$project->id?>" class="btn btn-lg card-btn" id="goSingle">Gallery</a>
+                    <a href="<?=url_base?>project/single&id=<?=$project->id?>" class="btn btn-lg card-btn" id="goSingle">Description</a>
                 </div>
 
             </div>

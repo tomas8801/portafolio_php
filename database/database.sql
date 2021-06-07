@@ -6,6 +6,9 @@ id int(255) auto_increment not null,
 name VARCHAR(100) not null,
 languages VARCHAR(50) not null,
 description text not null,
+image VARCHAR(50) not null,
+github VARCHAR(100),
+web VARCHAR(100),
 date date not null,
 CONSTRAINT pk_projects PRIMARY KEY (id)
 )ENGINE=InnoDb;

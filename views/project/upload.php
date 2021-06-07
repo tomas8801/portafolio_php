@@ -43,8 +43,11 @@
             Github <input type="text" name="github" class="form-control">
         </div>
 
-
         
+        <div class="form-group">
+            Web <input type="text" name="web" class="form-control">
+        </div>
+     
         <input type="submit" value="Upload" name="submit">
     </form>
 

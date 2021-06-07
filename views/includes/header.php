@@ -20,6 +20,7 @@
             <div class="col-md-12">
                     <ul class="filters" >
                         <li><a href="<?=url_base?>page/index">Projects</a></li>
+                        <li><a href="<?=url_base?>page/certifications">Certifications</a></li>
                         <li><a href="<?=url_base?>page/contact">Contact</a></li>
 
                         <?php if(Utils::isAdmin()) : ?>
@@ -31,7 +32,7 @@
                         <?php endif; ?>
                         
                         <?php if(Utils::isAdmin()) :  ?>
-                            <li>Bienvenido, administrador.</li>
+                            <li><small>Admin Mode</small></li>
                         <?php endif;?>
 
                     </ul>

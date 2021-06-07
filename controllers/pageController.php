@@ -9,6 +9,10 @@ class pageController {
         require_once 'views/project/projects.php';
     }
 
+    public function certifications(){
+        require_once 'views/certifications.php';
+    }
+
     public function contact(){
         require_once 'views/contact.php';
     }

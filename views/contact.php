@@ -4,7 +4,7 @@
 
         <div class="card-head " id="card-form">
             <p class="text-center mt-3">PHP Full Stack Developer student at Educacion IT, Buenos Aires.</p>
-            <p class="text-center"><a href="https://www.facebook.com/tommi.marsili">Facebook</a> - <a href="https://www.linkedin.com/in/tomasmarsili/">Linkedin</a> - <a href="https://github.com/tomas8801">Github</a><br>Or</p>
+            <p class="text-center"><a href="https://www.facebook.com/tommi.marsili" target="_blank">Facebook</a> - <a href="https://www.linkedin.com/in/tomasmarsili/" target="_blank">Linkedin</a> - <a href="https://github.com/tomas8801" target="_blank">Github</a><br>Or</p>
 
             <form style="width: 500px;" class="form mx-auto" id="formulario" action="enviar.php" method="post">
 
@@ -29,6 +29,7 @@
 
         <div class="card-body text-center">
             <h4 class="title">Tomas Marsili</h4>
+            <p><small>HTML | CSS | JAVASCRIPT | PHP | MySQL | Git</small></p>
         </div>
 
     </div>

@@ -7,6 +7,7 @@ class Project {
     public $description;
     public $image;
     public $github;
+    public $web;
     public $date;
 
     public $db;
@@ -35,14 +36,15 @@ class Project {
     }
 
     public function save(){
-        $sql = "INSERT INTO projects VALUES (null, :name, :languages, :description, :image, :github, CURDATE())";
+        $sql = "INSERT INTO projects VALUES (null, :name, :languages, :description, :image, :github, :web, CURDATE())";
         $stmt = $this->db->prepare($sql);
         $stmt->execute(array(
             ':name' => $this->getName(),
             ':languages' => $this->getLanguages(),
             ':description' => $this->getDescription(),
             ':image' => $this->getImage(),
-            ':github' => $this->getGithub()
+            ':github' => $this->getGithub(),
+            ':web' => $this->getWeb()
         ));
         
         $result = false;
@@ -63,6 +65,12 @@ class Project {
     }
 
     public function delete(){
+        $query = "DELETE FROM images WHERE id_project = :id";
+        $stmt = $this->db->prepare($query);
+        $id = $this->getId();
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
         $sql = "DELETE FROM projects WHERE id = :id ";
         $stmt = $this->db->prepare($sql);
         $id = $this->getId();
@@ -80,39 +88,26 @@ class Project {
 
 
 
-    /**
-     * Get the value of id
-     */ 
+   
     public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * Set the value of id
-     *
-     * @return  self
-     */ 
+
     public function setId($id)
     {
         $this->id = $id;
 
         return $this;
     }
-
-    /**
-     * Get the value of name
-     */ 
+ 
     public function getName()
     {
         return $this->name;
     }
 
-    /**
-     * Set the value of name
-     *
-     * @return  self
-     */ 
+  
     public function setName($name)
     {
         $this->name = $name;
@@ -120,19 +115,12 @@ class Project {
         return $this;
     }
 
-    /**
-     * Get the value of languages
-     */ 
     public function getLanguages()
     {
         return $this->languages;
     }
 
-    /**
-     * Set the value of languages
-     *
-     * @return  self
-     */ 
+ 
     public function setLanguages($languages)
     {
         $this->languages = $languages;
@@ -140,19 +128,13 @@ class Project {
         return $this;
     }
 
-    /**
-     * Get the value of description
-     */ 
+  
     public function getDescription()
     {
         return $this->description;
     }
 
-    /**
-     * Set the value of description
-     *
-     * @return  self
-     */ 
+ 
     public function setDescription($description)
     {
         $this->description = $description;
@@ -160,42 +142,40 @@ class Project {
         return $this;
     }
 
-    /**
-     * Get the value of image
-     */ 
     public function getImage()
     {
         return $this->image;
     }
 
-    /**
-     * Set the value of image
-     *
-     * @return  self
-     */ 
     public function setImage($image)
     {
         $this->image = $image;
 
         return $this;
     }
-
-    /**
-     * Get the value of github
-     */ 
+    
     public function getGithub()
     {
         return $this->github;
     }
 
-    /**
-     * Set the value of github
-     *
-     * @return  self
-     */ 
+
     public function setGithub($github)
     {
         $this->github = $github;
+
+        return $this;
+    }
+
+
+    public function getWeb()
+    {
+        return $this->web;
+    }
+
+    public function setWeb($web)
+    {
+        $this->web = $web;
 
         return $this;
     }
