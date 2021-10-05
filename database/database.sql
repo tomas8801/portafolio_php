@@ -27,3 +27,12 @@ name varchar(50) not null,
 password varchar(50) not null,
 CONSTRAINT pk_users PRIMARY KEY (id)
 )ENGINE=InnoDb;
+
+
+c
+
+id_usuari 
+id 
+per
+
+inner join id id_Esta tabhña  id user 

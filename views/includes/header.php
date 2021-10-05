@@ -18,7 +18,7 @@
 
     
             <div class="col-md-12">
-                    <ul class="filters" >
+                    <ul class="filters nav" >
                         <li><a href="<?=url_base?>page/index">Projects</a></li>
                         <li><a href="<?=url_base?>page/certifications">Certifications</a></li>
                         <li><a href="<?=url_base?>page/contact">Contact</a></li>
@@ -28,11 +28,11 @@
                             <li><a href="<?=url_base?>project/management" >Management</a></li>
                             <li><a href="<?=url_base?>admin/logout">Logout</a></li>
                         <?php else :?>
-                            <a href="<?=url_base?>page/admin" class="float-right">Login</a></li>                         
+                            <li><a href="<?=url_base?>page/admin" class="float-right">Login</a></li>                         
                         <?php endif; ?>
                         
                         <?php if(Utils::isAdmin()) :  ?>
-                            <li><small>Admin Mode</small></li>
+                            <li><a href="#" style="color: #cecece;cursor:auto;"><small>Admin Mode</small></a></li>
                         <?php endif;?>
 
                     </ul>

@@ -1,6 +1,6 @@
 
 
-<div class="col-lg-12 text-center">
+<div class="col-md-12 text-center">
 <h4 class=" text-muted"><?= $project->name?></h4>
 <div id="carousel" class="carousel slide" data-ride="carousel"> 
   <div class="carousel-inner">
