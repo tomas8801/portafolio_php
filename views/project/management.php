@@ -1,3 +1,4 @@
+
 <div class="col-md-12">
     <?php if(isset($_SESSION['delete'])):?>
         <div class="alert"><?= $_SESSION['delete']?></div>

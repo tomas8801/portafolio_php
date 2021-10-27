@@ -34,6 +34,7 @@
                         <?php if(Utils::isAdmin()) :  ?>
                             <li><a href="#" style="color: #cecece;cursor:auto;"><small>Admin Mode</small></a></li>
                         <?php endif;?>
+    
 
                     </ul>
 

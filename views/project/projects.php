@@ -18,9 +18,9 @@
             $languajes = explode(' - ', $languajes);
             $langs = implode(' ', $languajes);
             $langs = strtolower($langs);
-        ?>
-        <div class="col-lg-4 item <?=$langs?>">
 
+        ?>
+        <div class="col-lg-4 item <?=str_replace ( '-' , ' ' , $langs)?>">
             <div class="card">
 
                 <div class="card-head">
@@ -47,6 +47,8 @@
                                 </g>
                                 </svg></a>        
                             <?php endif; ?>
+
+                            <?php if($project->github):?>
                             <a href="<?=$project->github?>" target="_blank"><svg class="icono" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="438.549px" height="438.549px" viewBox="0 0 438.549 438.549" style="enable-background:new 0 0 438.549 438.549;"
                                 xml:space="preserve">
@@ -75,6 +77,7 @@
 
                             </svg>
                             </a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
